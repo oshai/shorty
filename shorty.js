@@ -92,6 +92,18 @@ if (Meteor.isClient) {
             desc = "goto line";
             text = "cmd + G";
         }
+        if (_.isEqual(keys, [17,79])) {
+            desc = "outline";
+            text = "cmd + F12";
+        }
+        if (_.isEqual(keys, [18,37])) {
+            desc = "previous editor";
+            text = "cmd + alt + left";
+        }
+        if (_.isEqual(keys, [68,91])) {
+            desc = "show desktop";
+            text = "F11";
+        }
         $("#theInput").text(text);
         $("#theDescription").text(desc);
     };
