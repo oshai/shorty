@@ -8,5 +8,13 @@
 </h1>
 <br/>
 <h1 align="center"><div id="theInput"></div> </h1>
+<br/>
+<ul>
+  {{#each mapping}}
+    {{> shortcut}}
+  {{/each}}
+</ul>
 </body>
-
+<template name="shortcut">
+  <li>{{description}} - {{value}}</li>
+</template>
