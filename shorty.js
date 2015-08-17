@@ -18,6 +18,7 @@ if (Meteor.isClient) {
     putInMap([16,17,79],    "⌘ + ⌥ + O", "organize imports");
     putInMap([16,17,82],    "⌘ + ⇧ + N", "open resource");
     putInMap([16,17,71],    "⌥ + F7", "references");
+    putInMap([17,18,72],    "^ + ⌥ + H", "call hierarchy");
     putInMap([17,18,40],    "⌘ + D", "copy lines");
     putInMap([17,18,82],    "⇧ + F6", "rename");
     putInMap([17,72],       "^ + ⇧ + F", "search");
@@ -31,8 +32,7 @@ if (Meteor.isClient) {
     putInMap([16,17,73],    "^ + ⌥ + F8", "evaluate");
     putInMap([17,18,37],    "⌘ + ⇧ + F8", "decrease selection");
     putInMap([17,37,91],    "⇧ + F7", "smart step into");
-    putInMap([17,18,72],    "^ + ⌥ + H", "call hierarchy");
-    putInMap([17,72,91],    "^ + ⌥ + H", "call hierarchy");
+
 
     Template.body.helpers({
         mapping : mapping
