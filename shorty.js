@@ -31,6 +31,8 @@ if (Meteor.isClient) {
     putInMap([16,17,73],    "^ + ⌥ + F8", "evaluate");
     putInMap([17,18,37],    "⌘ + ⇧ + F8", "decrease selection");
     putInMap([17,37,91],    "⇧ + F7", "smart step into");
+    putInMap([17,18,72],    "^ + ⌥ + H", "call hierarchy");
+    putInMap([17,72,91],    "^ + ⌥ + H", "call hierarchy");
 
     Template.body.helpers({
         mapping : mapping
