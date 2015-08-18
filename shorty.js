@@ -30,6 +30,7 @@ if (Meteor.isClient) {
     putInMap([18,37],       "⌘ + ⌥ + left", "previous editor");
     putInMap([68,91],       "F11", "show desktop");
     putInMap([16,17,73],    "^ + ⌥ + F8", "evaluate");
+    putInMap([16,17,39],    "⌘ + W", "increase selection");
     putInMap([17,18,37],    "⌘ + ⇧ + F8", "decrease selection");
     putInMap([17,37,91],    "⇧ + F7", "smart step into");
 
