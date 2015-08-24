@@ -8,7 +8,7 @@ if (Meteor.isClient) {
     putInMap([18,40],       "⌘ + ⇧ + down | ⌥ + ⇧ + down (no indentation)", "move line down");
     putInMap([18,38],       "⌘ + ⇧ + up | ⌥ + ⇧ + up (no indentation)", "move line up");
     putInMap([17,32],       "^ + (⇧) + space | ⌘ + J (templates)", "auto complete");
-    putInMap([17,77],       "⌘ + ⇧ + F12", "maximize");
+    putInMap([17,77],       "⌘ + ⇧ + F12 | ⌘ + ⇧ + ' (panels)", "maximize");
     putInMap([16,17,84],    "⌘ + N", "open type");
     putInMap([17,49],       "⌥ + enter", "open quick fix (intention)");
     putInMap([17,84],       "^ + H", "type hierarchy");
@@ -16,7 +16,7 @@ if (Meteor.isClient) {
     putInMap([17,73],       "⌘ + ⌥ + I", "indent");
     putInMap([16,17,70],    "⌘ + ⌥ + L", "format");
     putInMap([16,17,79],    "⌘ + ⌥ + O", "organize imports");
-    putInMap([16,17,82],    "⌘ + ⇧ + N", "open resource");
+    putInMap([16,17,82],    "⌘ + ⇧ + N | ⌘ + E (recent)", "open resource");
     putInMap([16,17,71],    "⌥ + F7", "references");
     putInMap([17,18,72],    "^ + ⌥ + H", "call hierarchy");
     putInMap([17,18,40],    "⌘ + D", "copy lines");
