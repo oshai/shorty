@@ -1,10 +1,34 @@
-if (Meteor.isClient) {
-    var keys = [];
+// client-side js
+// run by the browser each time your view template is loaded
+
+// by default, you've got jQuery,
+// add other scripts at the bottom of index.html
+
+$(function() {
+  console.log('hello world :o');
+  
+  // $.get('/dreams', function(dreams) {
+  //   dreams.forEach(function(dream) {
+  //     $('<li></li>').text(dream).appendTo('ul#dreams');
+  //   });
+  // });
+
+  // $('form').submit(function(event) {
+  //   event.preventDefault();
+  //   dream = $('input').val();
+  //   $.post('/dreams?' + $.param({dream: dream}), function() {
+  //     $('<li></li>').text(dream).appendTo('ul#dreams');
+  //     $('input').val('');
+  //     $('input').focus();
+  //   });
+  // });
+  
+   var keys = [];
     var text;
     var desc;
     var mapping = [];
 
-    putInMap([17,68],       "⌘ + Y", "delete line");
+    putInMap([17,68],       "⌘ + Backspace", "delete line");
     putInMap([18,40],       "⌘ + ⇧ + down | ⌥ + ⇧ + down (no indentation)", "move line down");
     putInMap([18,38],       "⌘ + ⇧ + up | ⌥ + ⇧ + up (no indentation)", "move line up");
     putInMap([17,32],       "^ + (⇧) + space | ⌘ + J (templates)", "auto complete");
@@ -12,7 +36,7 @@ if (Meteor.isClient) {
     putInMap([16,17,84],    "⌘ + N", "open type");
     putInMap([17,49],       "⌥ + enter", "open quick fix (intention)");
     putInMap([17,84],       "^ + H", "type hierarchy");
-    putInMap([17,81],       "⌘ + ⇧ + backspace", "last edit location");
+    putInMap([17,81],       "⌘ + ⇧ + Backspace", "last edit location");
     putInMap([17,73],       "⌘ + ⌥ + I", "indent");
     putInMap([16,17,70],    "⌘ + ⌥ + L", "format");
     putInMap([16,17,79],    "⌘ + ⌥ + O", "organize imports");
@@ -34,10 +58,6 @@ if (Meteor.isClient) {
     putInMap([17,18,37],    "⌘ + ⇧ + F8", "decrease selection");
     putInMap([17,37,91],    "⇧ + F7", "smart step into");
 
-
-    Template.body.helpers({
-        mapping : mapping
-    });
     function removeAll(item) {
         var index = keys.indexOf(item);
         while (index !== -1) {
@@ -45,7 +65,7 @@ if (Meteor.isClient) {
             index = keys.indexOf(item);
         }
 
-    };
+    }
     function sortNumber(a,b) {
         return a - b;
     }
@@ -59,13 +79,14 @@ if (Meteor.isClient) {
     }
     function putInMap(arrKeys, shortcut, description){
         mapping.push({pressed: arrKeys, value: shortcut, description: description})
+        $('<li></li>').text(description + " - " + shortcut).appendTo('ul#theList');
     }
     function display() {
         keys.sort(sortNumber);
         var ret = getFromMap(keys);
         $("#theInput").text(ret.value);
         $("#theDescription").text(ret.description);
-    };
+    }
 
     onkeydown = function(e){
         e.preventDefault();
@@ -82,10 +103,5 @@ if (Meteor.isClient) {
         }
         //display();
     };
-}
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
+});
